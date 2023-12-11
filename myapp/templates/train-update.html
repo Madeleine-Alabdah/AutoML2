@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Model</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="reset"]{
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover{
+            background-color: #218838;
+        }
+        button[type="button"]{
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="button"]:hover{
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <label>{{ form.x_columns.label }}</label>
+        {{ form.x_columns(style='width:100%;') }}<br>
+        <label>{{ form.y_column.label }}</label>
+        {{ form.y_column(style='width:100%;') }}<br>
+        <label>{{ form.mode.label }}</label>
+        {{ form.mode(style='width:100%;') }}<br>
+        <label>{{ form.algorithms.label }}</label>
+        {{ form.algorithms(style='width:100%;') }}<br>
+        <label>{{ form.time_limit.label }}</label>
+        {{ form.time_limit(style='width:100%;') }}<br>
+        {{ form.submit() }}
+        <input id="submit" name="submit" type="reset" value="Reset">
+        <button type="button" onclick="goBack()">Back</button>
+    </form>
+    <script>
+        function goBack() {
+            window.history.back(); // يتم الانتقال إلى الصفحة السابقة
+        }
+    </script>
+</body>
+
+</html>

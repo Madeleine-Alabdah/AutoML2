@@ -1,0 +1,163 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Upload Data</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--    {{ form.hidden_tag() }}-->
+<!--    {{ form.file.label }}: {{ form.file() }}<br>-->
+<!--    {{ form.submit() }}-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Upload Data</title>-->
+<!--    <style>-->
+<!--        /* Add your styling here */-->
+<!--        /* ... */-->
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <form id="upload-form" enctype="multipart/form-data">-->
+<!--        <input type="file" id="file-input" name="file"><br>-->
+<!--        <input type="button" value="Upload" onclick="previewFile()">-->
+<!--    </form>-->
+<!--    <img id="preview" src="" alt="Image Preview Here" style="max-width:200px; max-height:200px;">-->
+<!--    <script>-->
+<!--        function previewFile() {-->
+<!--            const preview = document.getElementById('preview');-->
+<!--            const file = document.querySelector('input[type=file]').files[0];-->
+<!--            const reader = new FileReader();-->
+
+<!--            reader.addEventListener("load", function () {-->
+<!--                // Convert image file to a data URL-->
+<!--                preview.src = reader.result;-->
+<!--            }, false);-->
+
+<!--            if (file) {-->
+<!--                reader.readAsDataURL(file);-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Data</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        input[type="reset"]{
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover{
+            background-color: #218838;
+        }
+        button[type="button"]{
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="button"]:hover{
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <label>{{ form.file.label }}</label>
+        {{ form.file(style='width:100%;') }}
+        <br>
+        {{ form.submit() }}
+        <input id="submit" name="submit" type="reset" value="Reset"> 
+        <button type="button" onclick="goBack()">Back</button>
+    </form>
+    
+    
+
+    <script>
+        function goBack() {
+            window.history.back(); // يتم الانتقال إلى الصفحة السابقة
+        }
+    </script>
+
+
+</html>

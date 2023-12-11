@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        button[type="button"] {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="button"]:hover {
+            background-color: #218838;
+        }
+    </style>
+
+    <script>
+        function logout() {
+            window.location.href = "/logout";
+        }
+    </script>
+</head>
+<body>
+    <h2>Training Completed</h2>
+    <p>
+        <h2>Welcome, {{ session['username'] }}, If you want to log out</h2>
+    </p>
+    <button type="button" onclick="logout()">Logout</button>
+
+    <p>{{ automl.report() }}</p>
+</body>
+</html>
